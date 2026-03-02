@@ -208,3 +208,8 @@ async def health():
 @app.get('/resume', response_class=HTMLResponse)
 async def resume(request: Request):
     return templates.TemplateResponse('resume.html', {'request': request})
+
+
+@app.get('/resume-view', response_class=HTMLResponse)
+async def resume_view(request: Request):
+    return templates.TemplateResponse('resume_view.html', {'request': request})
