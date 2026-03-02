@@ -203,3 +203,8 @@ async def chat(payload: ChatMessage):
 @app.get("/api/health")
 async def health():
     return {"status": "ok", "time": datetime.now().isoformat()}
+
+
+@app.get('/resume', response_class=HTMLResponse)
+async def resume(request: Request):
+    return templates.TemplateResponse('resume.html', {'request': request})
