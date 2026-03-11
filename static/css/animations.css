@@ -1,0 +1,418 @@
+/* ═══════════════════════════════════════════════════
+   RAUNAK DAS PORTFOLIO — animations.css
+   Premium animation system:
+   · Page load sequence
+   · Scroll-triggered reveals (stagger + blur)
+   · Magnetic hover on buttons
+   · Glowing accent line sweep
+   · Skill bar shimmer
+   · Card tilt on hover
+   · Typing cursor blink
+   · Noise texture overlay
+   · Ambient grid background
+   · Section number watermarks
+   · Smooth underline links
+   ═══════════════════════════════════════════════════ */
+
+/* ── 1. NOISE + GRID BACKGROUND ──────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.6;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(122,175,196,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(122,175,196,.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Ensure content sits above pseudo elements */
+nav, section, footer, .modal-bg, .chat-fab, .chat-win, .chat-intro {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 2. AMBIENT GLOW ORBS ─────────────────────────── */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+}
+.orb-1 {
+  width: 600px; height: 600px;
+  top: -120px; right: -120px;
+  background: radial-gradient(circle, rgba(122,175,196,.08) 0%, transparent 70%);
+  animation: orbFloat1 14s ease-in-out infinite;
+}
+.orb-2 {
+  width: 500px; height: 500px;
+  bottom: 10%; left: -100px;
+  background: radial-gradient(circle, rgba(61,71,73,.15) 0%, transparent 70%);
+  animation: orbFloat2 18s ease-in-out infinite;
+}
+.orb-3 {
+  width: 300px; height: 300px;
+  top: 45%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(122,175,196,.04) 0%, transparent 70%);
+  animation: orbFloat3 10s ease-in-out infinite;
+}
+@keyframes orbFloat1 { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-30px) scale(1.04)} }
+@keyframes orbFloat2 { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(24px) scale(.97)} }
+@keyframes orbFloat3 { 0%,100%{transform:translate(-50%,-50%) scale(1)} 50%{transform:translate(-50%,-52%) scale(1.08)} }
+
+/* ── 3. PAGE LOAD — CURTAIN WIPE ─────────────────── */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  background: var(--c900);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: loaderOut .6s ease 1.6s forwards;
+}
+.page-loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.loader-name {
+  font-family: var(--fs);
+  font-size: 52px;
+  letter-spacing: .1em;
+  color: var(--ink);
+  opacity: 0;
+  animation: loaderName .6s ease .2s forwards;
+}
+.loader-name span { color: var(--ac); }
+.loader-bar-wrap {
+  width: 200px;
+  height: 1px;
+  background: var(--line);
+  overflow: hidden;
+}
+.loader-bar {
+  height: 100%;
+  background: var(--ac);
+  width: 0;
+  animation: loaderBar 1.2s cubic-bezier(.4,0,.2,1) .3s forwards;
+}
+@keyframes loaderName { to { opacity: 1; } }
+@keyframes loaderBar  { to { width: 100%; } }
+@keyframes loaderOut  { to { opacity: 0; pointer-events: none; } }
+
+/* ── 4. HERO ANIMATIONS ───────────────────────────── */
+/* Staggered entrance */
+.hero-kicker  { animation: heroUp .8s cubic-bezier(.22,1,.36,1) .1s both; }
+.hero-name    { animation: heroUp .9s cubic-bezier(.22,1,.36,1) .2s both; }
+.hero-title   { animation: heroUp .8s cubic-bezier(.22,1,.36,1) .32s both; }
+.hero-desc    { animation: heroUp .8s cubic-bezier(.22,1,.36,1) .44s both; }
+.hero-ctas    { animation: heroUp .8s cubic-bezier(.22,1,.36,1) .56s both; }
+.hero-right   { animation: heroRight .9s cubic-bezier(.22,1,.36,1) .5s both; }
+.hero-stats-bar { animation: heroUp .8s cubic-bezier(.22,1,.36,1) .7s both; }
+@keyframes heroUp    { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+@keyframes heroRight { from{opacity:0;transform:translateX(24px)} to{opacity:1;transform:none} }
+
+/* Animated typing cursor after hero title */
+.hero-title::after {
+  content: '|';
+  color: var(--ac);
+  margin-left: 4px;
+  animation: blink .9s step-end infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* Hero name letter shimmer on hover */
+.hero-name {
+  background: linear-gradient(
+    120deg,
+    var(--c50) 0%, var(--c50) 40%,
+    var(--ac)  50%,
+    var(--c50) 60%, var(--c50) 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: background-position .6s ease;
+}
+.hero-name:hover { background-position: right center; }
+.hero-name span {
+  background: linear-gradient(120deg, var(--ac) 0%, var(--c100) 50%, var(--ac) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: nameGlow 4s linear infinite;
+}
+@keyframes nameGlow { to { background-position: right center; } }
+
+/* ── 5. SCROLL REVEAL ─────────────────────────────── */
+.rv {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(3px);
+  transition: opacity .65s ease, transform .65s ease, filter .65s ease;
+}
+.rv.in { opacity: 1; transform: none; filter: none; }
+
+/* Stagger children inside a revealed parent */
+.rv.in .spec:nth-child(1) { transition-delay: .05s; }
+.rv.in .spec:nth-child(2) { transition-delay: .12s; }
+.rv.in .spec:nth-child(3) { transition-delay: .19s; }
+.rv.in .spec:nth-child(4) { transition-delay: .26s; }
+
+/* Timeline slide-in from left */
+.tl-row {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.tl-row:nth-child(1) { transition-delay: .05s; }
+.tl-row:nth-child(2) { transition-delay: .18s; }
+.tl-row.in { opacity: 1; transform: none; }
+
+/* ── 6. SECTION WATERMARK NUMBERS ────────────────── */
+.sec::before,
+.sec-dk .sec-in::before {
+  content: attr(data-num);
+  position: absolute;
+  top: 40px; right: 48px;
+  font-family: var(--fs);
+  font-size: 140px;
+  letter-spacing: .04em;
+  color: rgba(122,175,196,.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ── 7. ACCENT LINE SWEEP on SECTION TAG ─────────── */
+.sec-tag {
+  position: relative;
+  overflow: hidden;
+}
+.sec-tag::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  width: 0; height: 1px;
+  background: var(--ac);
+  transition: width .6s ease;
+  transform: translateY(-50%);
+  opacity: .4;
+}
+.sec-tag.in::after { width: 100%; }
+
+/* ── 8. MAGNETIC BUTTON EFFECT (handled in JS) ────── */
+.btn-pri, .btn-sec {
+  transition: background .25s, transform .15s, box-shadow .25s;
+  will-change: transform;
+}
+
+/* Button shimmer sweep */
+.btn-pri {
+  position: relative;
+  overflow: hidden;
+}
+.btn-pri::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.15), transparent);
+  transform: skewX(-20deg);
+  transition: left 0s;
+}
+.btn-pri:hover::before {
+  left: 160%;
+  transition: left .5s ease;
+}
+
+/* ── 9. PROJECT CARD TILT + GLOW ─────────────────── */
+.proj-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: opacity .5s ease, transform .5s ease, background .25s, border-left .25s, box-shadow .3s;
+}
+.proj-card:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,.4), inset 0 1px 0 rgba(122,175,196,.1);
+}
+
+/* Animated counter number */
+.proj-idx {
+  position: relative;
+  overflow: hidden;
+}
+.proj-idx::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 24px; height: 1px;
+  background: var(--ac);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s ease;
+}
+.proj-card:hover .proj-idx::after { transform: scaleX(1); }
+
+/* ── 10. SKILL BAR SHIMMER ────────────────────────── */
+.bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 40px; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+  animation: barShimmer 2.5s ease infinite;
+}
+@keyframes barShimmer {
+  0%   { opacity: 0; transform: translateX(-40px); }
+  40%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(0); }
+}
+
+/* ── 11. SPEC CARD HOVER ACCENT ──────────────────── */
+.spec {
+  position: relative;
+  overflow: hidden;
+}
+.spec::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 0; height: 100%;
+  background: linear-gradient(90deg, rgba(122,175,196,.04), transparent);
+  transition: width .4s ease;
+}
+.spec:hover::after { width: 100%; }
+
+/* ── 12. CERT & EDU CARD GLOW ────────────────────── */
+.cert-c, .edu-c {
+  transition: opacity .5s ease, transform .5s ease, background .25s, border-left .25s, box-shadow .3s;
+}
+.cert-c:hover, .edu-c:hover {
+  box-shadow: -2px 0 20px rgba(122,175,196,.12);
+}
+
+/* ── 13. CONTACT LINK SLIDE ──────────────────────── */
+.c-link { overflow: hidden; }
+.c-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(122,175,196,.04), transparent);
+  transform: translateX(-100%);
+  transition: transform .35s ease;
+}
+.c-link:hover::before { transform: translateX(0); }
+.c-link { position: relative; }
+
+/* ── 14. NAV ACTIVE INDICATOR ────────────────────── */
+.nav-ul a {
+  position: relative;
+  padding-bottom: 3px;
+}
+.nav-ul a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--ac);
+  transition: width .25s ease;
+}
+.nav-ul a:hover::after,
+.nav-ul a.active::after { width: 100%; }
+
+/* ── 15. SCROLL PROGRESS BAR ─────────────────────── */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--ac2), var(--ac));
+  z-index: 9999;
+  transition: width .1s linear;
+}
+
+/* ── 16. PHOTO FRAME SCAN LINE ───────────────────── */
+.photo-frame::before {
+  animation: photoShift 12s ease-in-out infinite;
+}
+@keyframes photoShift {
+  0%,100% { background-position: 0% 50%; }
+  50%     { background-position: 100% 50%; }
+}
+
+/* scan line over photo */
+.hero-right::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0; right: 0;
+  height: 30%;
+  background: linear-gradient(to bottom, transparent, rgba(122,175,196,.04), transparent);
+  animation: scanLine 5s linear infinite;
+  z-index: 5;
+  pointer-events: none;
+}
+@keyframes scanLine {
+  0%   { top: -30%; }
+  100% { top: 120%; }
+}
+
+/* ── 17. FOOTER FADE-UP ───────────────────────────── */
+footer {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+footer.in { opacity: 1; transform: none; }
+
+/* ── 18. STAT NUMBER GLOW ─────────────────────────── */
+.stat-n {
+  text-shadow: 0 0 40px rgba(122,175,196,.2);
+  animation: statPulse 4s ease-in-out infinite;
+}
+@keyframes statPulse {
+  0%,100% { text-shadow: 0 0 40px rgba(122,175,196,.2); }
+  50%     { text-shadow: 0 0 60px rgba(122,175,196,.38); }
+}
+
+/* ── 19. PHOTO TAG PULSE ──────────────────────────── */
+.photo-tag {
+  animation: tagFloat 3s ease-in-out infinite;
+}
+@keyframes tagFloat {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-6px); }
+}
+.photo-accent-dot {
+  animation: dotPulse 2s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(122,175,196,.5); }
+  50%     { box-shadow: 0 0 0 8px rgba(122,175,196,0); }
+}
+
+/* ── 20. MOBILE ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .orb-1, .orb-2, .orb-3 { display: none; }
+  .sec::before, .sec-dk .sec-in::before { font-size: 80px; right: 24px; }
+}
