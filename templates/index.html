@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raunak Das — Software Developer & Data Analyst</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/animations.css">
+  <link rel="stylesheet" href="/static/css/chatbot.css">
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- PAGE LOADER -->
+<div id="pageLoader" class="page-loader">
+  <div class="page-loader-inner">
+    <div class="loader-name">RAUNAK<span>.</span></div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  </div>
+</div>
+
+<!-- AMBIENT ORBS -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- CURSOR -->
+<div id="cur"></div>
+<div id="cur-r"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav">
+  <div class="nav-i">
+    <a href="#hero" class="logo">RAUNAK<span>.</span></a>
+    <ul class="nav-ul">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="ham" id="ham"><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#about"          onclick="mClose()">About</a>
+  <a href="#skills"         onclick="mClose()">Skills</a>
+  <a href="#experience"     onclick="mClose()">Experience</a>
+  <a href="#projects"       onclick="mClose()">Projects</a>
+  <a href="#certifications" onclick="mClose()">Certifications</a>
+  <a href="#contact"        onclick="mClose()">Contact</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero" class="hero">
+
+  <!-- LEFT — Text -->
+  <div class="hero-left">
+    <p class="hero-kicker">Software Developer &amp; Data Analyst</p>
+    <h1 class="hero-name">RAUNAK<span>DAS</span></h1>
+    <p class="hero-title">Python · FastAPI · Machine Learning · Data Science</p>
+    <p class="hero-desc">
+      I build backends that scale, pipelines that don't break,
+      and ML models that actually work in production. Based in Kolkata.
+    </p>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn-pri">
+        <span>See My Work</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M7 17L17 7M17 7H7M17 7v10"/>
+        </svg>
+      </a>
+      <a href="#contact" class="btn-sec">Get in Touch</a>
+    </div>
+  </div>
+
+<!-- RIGHT — Photo -->
+  <div class="hero-right">
+  <div class="photo-frame">
+
+    <!--
+      TO ADD YOUR PHOTO:
+      1. Drop your image into static/images/  (name it raunak.jpg)
+      2. Delete the photo-placeholder div below
+      3. Uncomment the <img> line
+    -->
+    <img src="/static/images/raunak.jpg" alt="Raunak Das"> 
+
+    <!-- <div class="photo-placeholder">
+      <div class="photo-silhouette">
+        <div class="ph-head"></div>
+        <div class="ph-body"></div>
+      </div>
+    </div> -->
+
+  </div>
+  <div class="photo-accent-line"></div>
+  <div class="photo-accent-dot"></div>
+  <div class="photo-tag">
+    <div class="photo-tag-role">Available to hire</div>
+    <div class="photo-tag-name">RAUNAK DAS</div>
+  </div>
+</div>
+  <!-- STATS BAR -->
+  <div class="hero-stats-bar">
+    <div class="stat-item">
+      <div class="stat-n" id="sv1">0</div>
+      <div class="stat-l">Years Experience</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">2.5M<sup>+</sup></div>
+      <div class="stat-l">Records Processed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">98<sup>%</sup></div>
+      <div class="stat-l">Model Accuracy</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">11</div>
+      <div class="stat-l">GitHub Repos</div>
+    </div>
+  </div>
+
+</section>
+<div class="rule"></div>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about" class="sec" data-num="01">
+  <div class="sec-tag rv">About</div>
+  <div class="about-g">
+
+    <div class="about-copy rv">
+      <h2 class="sec-h">I WRITE CODE<br><em>THAT SHIPS.</em></h2>
+      <p>
+        CS student at UEM Kolkata, graduating July 2026. My work sits at the intersection of
+        backend engineering, data pipelines, and ML — I've processed <strong>2.5M+ records</strong>
+        in production and shipped FastAPI microservices used by cross-functional teams.
+      </p>
+      <p>
+        At <strong>OGGANGS Pvt. Ltd.</strong> I built scraping systems that didn't flinch at scale.
+        At <strong>Humans of Football</strong>, I turned 5,000+ rows of messy data into Power BI
+        dashboards that moved real decisions — and got a 20% efficiency gain to show for it.
+      </p>
+      <p>
+        I also led 10+ interns as Volunteer Lead, ran 5+ high-traffic sports events, and broke
+        attendance records. Competitive footballer, chess player, Bengali by heart.
+      </p>
+      <div class="about-langs">
+        <span class="lang-tag">English</span>
+        <span class="lang-tag">Hindi</span>
+        <span class="lang-tag">Bengali</span>
+      </div>
+    </div>
+
+    <div class="rv">
+      <div class="spec-list">
+        <div class="spec">
+          <div class="spec-no">01</div>
+          <div class="spec-title">Backend Engineering</div>
+          <div class="spec-body">FastAPI & Django microservices — high-throughput, low-latency, production-ready</div>
+        </div>
+        <div class="spec">
+          <div class="spec-no">02</div>
+          <div class="spec-title">Data Analytics</div>
+          <div class="spec-body">Raw CSV in, Power BI executive dashboards out. No fluff.</div>
+        </div>
+        <div class="spec">
+          <div class="spec-no">03</div>
+          <div class="spec-title">Machine Learning</div>
+          <div class="spec-body">98% ROC-AUC fraud detection. Real models, real metrics.</div>
+        </div>
+        <div class="spec">
+          <div class="spec-no">04</div>
+          <div class="spec-title">Automation & Scraping</div>
+          <div class="spec-body">Selenium, Playwright, Pyppeteer — 2.5M+ records, zero tolerance for failure</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="rule"></div>
+
+<!-- ═══ SKILLS ═══ -->
+<section id="skills" class="sec-dk">
+  <div class="sec-in">
+    <div class="sec-tag rv">Skills</div>
+    <h2 class="sec-h rv">THE TOOLKIT.</h2>
+    <div class="sk-g">
+
+      <div class="rv" data-bars>
+        <div class="sk-label">Languages</div>
+        <div class="bar-row" data-p="95">
+          <div class="bar-top"><span>Python</span><span class="bar-pct">95%</span></div>
+          <div class="bar-bg"><div class="bar-fill"></div></div>
+        </div>
+        <div class="bar-row" data-p="85">
+          <div class="bar-top"><span>SQL</span><span class="bar-pct">85%</span></div>
+          <div class="bar-bg"><div class="bar-fill"></div></div>
+        </div>
+        <div class="bar-row" data-p="70">
+          <div class="bar-top"><span>Java</span><span class="bar-pct">70%</span></div>
+          <div class="bar-bg"><div class="bar-fill"></div></div>
+        </div>
+      </div>
+
+      <div class="rv" data-bars>
+        <div class="sk-label">BI & Analytics</div>
+        <div class="bar-row" data-p="90">
+          <div class="bar-top"><span>Excel / Sheets</span><span class="bar-pct">90%</span></div>
+          <div class="bar-bg"><div class="bar-fill"></div></div>
+        </div>
+        <div class="bar-row" data-p="85">
+          <div class="bar-top"><span>Power BI</span><span class="bar-pct">85%</span></div>
+          <div class="bar-bg"><div class="bar-fill"></div></div>
+        </div>
+        <div class="bar-row" data-p="70">
+          <div class="bar-top"><span>IBM Cognos</span><span class="bar-pct">70%</span></div>
+          <div class="bar-bg"><div class="bar-fill"></div></div>
+        </div>
+      </div>
+
+      <div class="rv">
+        <div class="sk-label">Frameworks</div>
+        <div class="pill-wrap">
+          <span class="pk hi">FastAPI</span>
+          <span class="pk hi">Django</span>
+          <span class="pk">REST APIs</span>
+          <span class="pk">Microservices</span>
+          <span class="pk">Tailwind CSS</span>
+        </div>
+      </div>
+
+      <div class="rv">
+        <div class="sk-label">ML / Data</div>
+        <div class="pill-wrap">
+          <span class="pk hi">Pandas</span>
+          <span class="pk hi">Scikit-learn</span>
+          <span class="pk">NumPy</span>
+          <span class="pk">Matplotlib</span>
+          <span class="pk">Seaborn</span>
+          <span class="pk">BeautifulSoup</span>
+        </div>
+      </div>
+
+      <div class="rv">
+        <div class="sk-label">Automation</div>
+        <div class="pill-wrap">
+          <span class="pk hi">Selenium</span>
+          <span class="pk hi">Playwright</span>
+          <span class="pk">Pyppeteer</span>
+          <span class="pk">Asyncio</span>
+        </div>
+      </div>
+
+      <div class="rv">
+        <div class="sk-label">Cloud & Databases</div>
+        <div class="pill-wrap">
+          <span class="pk hi">AWS</span>
+          <span class="pk">MongoDB</span>
+          <span class="pk">PostgreSQL</span>
+          <span class="pk">MySQL</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="rule"></div>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section id="experience" class="sec" data-num="03">
+  <div class="sec-tag rv">Experience</div>
+  <h2 class="sec-h rv">WHERE I'VE <em>SHIPPED.</em></h2>
+  <div class="tl">
+
+    <div class="tl-row">
+      <div class="tl-date">
+        <div class="tl-date-yr">DEC '25</div>
+        <div class="tl-date-mo">Mar '26</div>
+      </div>
+      <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-body">
+        <div class="tl-role">SOFTWARE ENGINEERING INTERN</div>
+        <div class="tl-co">OGGANGS Pvt. Ltd.</div>
+        <ul class="tl-ul">
+          <li>Built Selenium, Playwright, Pyppeteer & BS4 pipelines — <strong>2.5M+ records</strong> extracted and sanitised</li>
+          <li>Optimised Django Data Fetcher module, cut delivery lag for downstream teams</li>
+          <li>Shipped FastAPI microservices that reduced API latency and improved cross-team data flow</li>
+          <li>Worked alongside global engineers, hit every sprint deadline</li>
+        </ul>
+        <div class="tl-chips">
+          <span>Python</span><span>Django</span><span>FastAPI</span>
+          <span>Selenium</span><span>Playwright</span><span>Pyppeteer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-date">
+        <div class="tl-date-yr">MAY '25</div>
+        <div class="tl-date-mo">Aug '25</div>
+      </div>
+      <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-body">
+        <div class="tl-role">DATA ANALYTICS INTERN</div>
+        <div class="tl-co">Humans of Football</div>
+        <ul class="tl-ul">
+          <li>Wrangled <strong>5,000+ records</strong> with Python, Pandas, Excel — turned noise into insight</li>
+          <li>Built <strong>10+ Power BI dashboards</strong> that leadership actually used for real decisions</li>
+          <li>A/B tested recruitment & event formats → <strong>20% efficiency jump</strong>, presented to senior leadership</li>
+        </ul>
+        <div class="tl-chips">
+          <span>Python</span><span>Pandas</span><span>Power BI</span>
+          <span>Excel</span><span>A/B Testing</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="rule"></div>
+
+<!-- ═══ PROJECTS ═══ -->
+<section id="projects" class="sec-dk">
+  <div class="sec-in">
+    <div class="proj-header rv">
+      <h2 class="sec-h" style="margin-bottom:0">WHAT I'VE <em>BUILT.</em></h2>
+      <div class="filt">
+        <button class="fb on" data-f="all">All</button>
+        <button class="fb" data-f="Data Science">Data Science</button>
+        <button class="fb" data-f="Machine Learning">ML</button>
+        <button class="fb" data-f="Full-Stack">Full-Stack</button>
+        <button class="fb" data-f="Web App">Web</button>
+        <button class="fb" data-f="Data Analytics">Analytics</button>
+      </div>
+    </div>
+    <div class="proj-grid" id="pg"></div>
+    <div class="sync-row">
+      <button class="sync-btn" onclick="doSync()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12">
+          <path d="M1 4v6h6M23 20v-6h-6"/>
+          <path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/>
+        </svg>
+        Sync GitHub
+      </button>
+      <span class="sync-info" id="si"></span>
+    </div>
+  </div>
+</section>
+<div class="rule"></div>
+
+<!-- ═══ CERTIFICATIONS ═══ -->
+<section id="certifications" class="sec" data-num="05">
+  <div class="sec-tag rv">Certifications</div>
+  <h2 class="sec-h rv">CREDENTIALS.</h2>
+  <div class="cert-g" id="cg"></div>
+</section>
+<div class="rule"></div>
+
+<!-- ═══ EDUCATION ═══ -->
+<section id="education" class="sec-dk">
+  <div class="sec-in">
+    <div class="sec-tag rv">Education</div>
+    <h2 class="sec-h rv">WHERE I <em>LEARNED.</em></h2>
+    <div class="edu-g">
+
+      <div class="edu-c rv edu-card-photo">
+        <canvas class="edu-bg-canvas"></canvas>
+        <div class="edu-photo-wrap">
+           <img src="static\images\uempic.jpeg" alt="UEM Kolkata" class="edu-photo">
+        </div>
+        <div class="edu-content">
+          <div class="edu-yr">2022 — 2026</div>
+          <div class="edu-deg">B.TECH CST</div>
+          <div class="edu-sch">University of Engineering &amp; Management, Kolkata</div>
+          <div class="edu-sub">Data Science · OOPs · DBMS</div>
+        </div>
+      </div>
+
+      <div class="edu-c rv edu-card-photo">
+        <canvas class="edu-bg-canvas"></canvas>
+        <div class="edu-photo-wrap">
+          <!--
+            Add your school photo:
+            1. Drop image into static/images/amrita.jpg
+            2. Change the div below to: <img src="/static/images/amrita.jpg" alt="Amrita Vidyalayam">
+          -->
+          <img src="/static/images/amrita.jpg" alt="Amrita Vidyalayam">
+        </div>
+        <div class="edu-content">
+          <div class="edu-yr">2022</div>
+          <div class="edu-deg">CLASS XII — CBSE</div>
+          <div class="edu-sch">Amrita Vidyalayam, Kolkata</div>
+          <div class="edu-sub">Mathematics · Sciences · Computer Science</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="rule"></div>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="sec" data-num="07">
+  <div class="sec-tag rv">Contact</div>
+  <div class="cont-g">
+
+    <div class="cont-copy rv">
+      <h2 class="sec-h">LET'S <em>BUILD.</em></h2>
+      <p>Available for full-time roles, internships, and freelance work in software
+      engineering, data analytics, and Python development. Kolkata-based, remote-friendly.</p>
+      <div class="c-links">
+        <a href="mailto:raunakd35@gmail.com" class="c-link">
+          <div class="c-link-ic">✉</div>
+          <div><span class="c-link-lb">Email</span><span class="c-link-val">raunakd35@gmail.com</span></div>
+        </a>
+        <a href="https://www.linkedin.com/in/raunak-das/" target="_blank" class="c-link">
+          <div class="c-link-ic">in</div>
+          <div><span class="c-link-lb">LinkedIn</span><span class="c-link-val">linkedin.com/in/raunak-das</span></div>
+        </a>
+        <a href="https://github.com/Ra59s-Das" target="_blank" class="c-link">
+          <div class="c-link-ic">gh</div>
+          <div><span class="c-link-lb">GitHub</span><span class="c-link-val">github.com/Ra59s-Das</span></div>
+        </a>
+      </div>
+    </div>
+
+    <form class="form-wrap rv" id="cForm">
+      <div class="field"><input type="text"  id="fn" placeholder=" " required><label for="fn">Your Name</label></div>
+      <div class="field"><input type="email" id="fe" placeholder=" " required><label for="fe">Your Email</label></div>
+      <div class="field"><input type="text"  id="fs" placeholder=" "        ><label for="fs">Subject</label></div>
+      <div class="field"><textarea           id="fm" placeholder=" " required></textarea><label for="fm">Message</label></div>
+      <button type="submit" class="btn-pri" style="width:100%;justify-content:center;cursor:none">
+        Send Message →
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Raunak Das — Kolkata, India</span>
+  <span>Python · FastAPI · Data Science</span>
+</footer>
+
+<!-- ═══ CERT MODAL ═══ -->
+<div class="modal-bg" id="modBg">
+  <div class="modal-box">
+    <button class="modal-x" onclick="modClose()">✕</button>
+    <div id="modCon"></div>
+  </div>
+</div>
+
+<!-- ═══ CHATBOT ═══ -->
+<div class="chat-intro" id="chatIntro">
+  <span class="chat-intro-text">Ask me anything — <strong>skills, projects, hobbies & more</strong></span>
+  <button class="chat-intro-x" onclick="dismissIntro()">✕</button>
+</div>
+
+<button class="chat-fab" id="cfab" onclick="tChat()">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="20" id="ci1">
+    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+  </svg>
+  <svg viewBox="0 0 24 24" fill="currentColor" width="20" id="ci2" style="display:none">
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+  </svg>
+  <span class="online-dot"></span>
+</button>
+
+<div class="chat-win" id="chatWin">
+  <div class="chat-head">
+    <div class="chat-av">RD<span class="chat-online-dot"></span></div>
+    <div>
+      <div class="chat-hname">Ask About Raunak</div>
+      <div class="chat-hst">AI · Online</div>
+    </div>
+  </div>
+  <div class="chat-msgs" id="chatMsgs">
+    <div class="msg bot">
+      Hey 👋 — I know everything about Raunak.
+      Ask me about his <strong>skills, projects, experience, hobbies,</strong> or <strong>availability.</strong>
+    </div>
+  </div>
+  <div class="chat-chips" id="chatChips">
+    <button class="chip" onclick="askC('What are his core skills?')">Skills</button>
+    <button class="chip" onclick="askC('Tell me about his projects')">Projects</button>
+    <button class="chip" onclick="askC('What are his hobbies?')">Hobbies</button>
+    <button class="chip" onclick="askC('Is he available for hire?')">Available?</button>
+    <button class="chip" onclick="askC('What internships has he done?')">Experience</button>
+  </div>
+  <div class="chat-input-row">
+    <input id="chatInp" class="chat-inp" placeholder="Ask anything…"
+           onkeydown="if(event.key==='Enter') sChat()">
+    <button class="chat-send" onclick="sChat()">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="15">
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- ═══ SCRIPTS ═══ -->
+<script src="/static/js/main.js"></script>
+<script src="/static/js/chatbot.js"></script>
+
+</body>
+</html>
