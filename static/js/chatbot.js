@@ -152,7 +152,8 @@ async function sendChat() {
     const data = await res.json();
     hideTyping();
 
-    const reply = data.choices?.[0]?.message?.content || 'Something went wrong — try again.';
+    console.log('API response:', JSON.stringify(data));
+    const reply = data.choices?.[0]?.message?.content || data.reply || data.message || 'Something went wrong — try again.';
     addMsg(reply, 'bot');
     chatHistory.push({ role: 'assistant', content: reply });
 
