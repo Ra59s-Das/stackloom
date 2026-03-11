@@ -1,0 +1,42 @@
+[
+  {
+    "id": "c1",
+    "title": "AI/ML WITH IBM SKILLBUILD",
+    "issuer": "Edunet Foundation × IBM",
+    "date": "2024",
+    "description": "Comprehensive AI and ML programme covering neural networks, supervised and unsupervised learning, model evaluation, and real-world deployment using IBM Watson tools and AutoAI.",
+    "color": "#4a8ecf",
+    "image_url": "static\\images\\certificates\\Screenshot 2026-04-14 142950.png",
+    "credential_url": ""
+  },
+  {
+    "id": "c2",
+    "title": "DATABASE FOR DEVELOPERS",
+    "issuer": "Oracle",
+    "date": "2023",
+    "description": "Oracle-certified course covering relational database design, advanced SQL optimisation, PL/SQL programming, transactions, indexing strategies, and enterprise database management.",
+    "color": "#c44040",
+    "image_url": "static\\images\\certificates\\Screenshot 2026-04-14 143008.png",
+    "credential_url": ""
+  },
+  {
+    "id": "c3",
+    "title": "Industry Communication and Professional Etiquette",
+    "issuer": "Samghar Software x E2P Consultancy",
+    "date": "2025",
+    "description": "Industry-focused workshop on professional communication and workplace etiquette, covering email and meeting norms, client interaction, and interpersonal skills for modern software teams",
+    "color": "#14b8a6",
+    "image_url": "static\\images\\certificates\\industrial_communication.png",
+    "credential_url": ""
+  },
+  {
+    "id": "c4",
+    "title": "Workshop on AI tool and industrial best practices",
+    "issuer": "Samghar Software x E2P Consultancy",
+    "date": "2025",
+    "description": "Hands-on workshop on practical AI tools and industrial best practices, covering how to integrate AI into real-world workflows, improve productivity, and apply responsible AI usage in professional settings.",
+    "color": "#14b8a6",
+    "image_url": "static\\images\\certificates\\aitools.png",
+    "credential_url": ""
+  }
+]

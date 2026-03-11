@@ -1,0 +1,202 @@
+[
+  {
+    "repo_name": "F1_Dominance_Analytics",
+    "name": "F1 Dominance Analytics",
+    "description": "TDI algorithm on 1000+ entries, 1950-2025.",
+    "tags": [
+      "Python",
+      "Pandas",
+      "Matplotlib",
+      "Seaborn"
+    ],
+    "metrics": [
+      "1000+ entries",
+      "75 years"
+    ],
+    "featured": true,
+    "category": "Data Science",
+    "github_url": "https://github.com/Ra59s-Das/F1_Dominance_Analytics",
+    "approved": true
+  },
+  {
+    "repo_name": "FraudDetectionPipeline",
+    "name": "Fraud Detection Pipeline",
+    "description": "Random Forest on 280K+ transactions, 98% ROC-AUC.",
+    "tags": [
+      "Python",
+      "Scikit-learn",
+      "Pandas"
+    ],
+    "metrics": [
+      "98% ROC-AUC",
+      "0.92 F1"
+    ],
+    "featured": true,
+    "category": "Machine Learning",
+    "github_url": "https://github.com/Ra59s-Das/FraudDetectionPipeline",
+    "approved": true
+  },
+  {
+    "repo_name": "Trader_Behaviour_Insights",
+    "name": "Trader Behaviour Insights",
+    "description": "Fear & Greed Index vs trader profitability + Power BI.",
+    "tags": [
+      "Python",
+      "Pandas",
+      "Power BI"
+    ],
+    "metrics": [
+      "Sentiment analysis",
+      "Power BI"
+    ],
+    "featured": true,
+    "category": "Data Analytics",
+    "github_url": "https://github.com/Ra59s-Das/Trader_Behaviour_Insights",
+    "approved": true
+  },
+  {
+    "repo_name": "Quack-Quack",
+    "name": "HackVerse Platform",
+    "description": "15+ FastAPI endpoints, automated room allocation, TypeScript.",
+    "tags": [
+      "TypeScript",
+      "FastAPI",
+      "Python"
+    ],
+    "metrics": [
+      "25% fewer errors",
+      "30% less manual work"
+    ],
+    "featured": true,
+    "category": "Full-Stack",
+    "github_url": "https://github.com/Ra59s-Das/Quack-Quack",
+    "approved": true
+  },
+  {
+    "repo_name": "SkyMonk",
+    "name": "SkyMonk Weather App",
+    "description": "Weather app live on Vercel.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "metrics": [
+      "Live on Vercel"
+    ],
+    "featured": false,
+    "category": "Web App",
+    "github_url": "https://github.com/Ra59s-Das/SkyMonk",
+    "live_url": "https://sky-monk.vercel.app",
+    "approved": true
+  },
+  {
+    "repo_name": "To--Do",
+    "name": "To-Do App",
+    "description": "Python backend + HTML/CSS/JS.",
+    "tags": [
+      "Python",
+      "HTML",
+      "CSS"
+    ],
+    "metrics": [
+      "Full-stack"
+    ],
+    "featured": false,
+    "category": "Web App",
+    "github_url": "https://github.com/Ra59s-Das/To--Do",
+    "approved": true
+  },
+  {
+    "repo_name": "home-price-prediction",
+    "description": "Predicting housing prices using Linear Regression with Python, Pandas, NumPYand Scikit-learn.",
+    "github_url": "https://github.com/Ra59s-Das/home-price-prediction",
+    "language": "Jupyter Notebook",
+    "stars": 2,
+    "updated_at": "2026-04-13T12:56:58Z",
+    "tags": [
+      "Jupyter Notebook"
+    ],
+    "metrics": [],
+    "featured": true,
+    "category": "Data Science",
+    "approved": true
+  },
+  {
+    "repo_name": "iris-data-analysis",
+    "description": "EDA and visualization of the classic Iris dataset to explore feature relationships and patterns.",
+    "github_url": "https://github.com/Ra59s-Das/iris-data-analysis",
+    "language": "Jupyter Notebook",
+    "stars": 1,
+    "updated_at": "2026-04-13T12:54:53Z",
+    "tags": [
+      "Jupyter Notebook"
+    ],
+    "metrics": [],
+    "featured": true,
+    "category": "Data Science",
+    "approved": true
+  },
+  {
+    "repo_name": "Bollywood-Movie-Analysis",
+    "description": "This project analyzes a Bollywood movies dataset with details like release dates, genres, budgets, box office collections, and YouTube trailer statistics (views, likes, dislikes). It includes data cleaning, visualization, and insights to understand trends in the Bollywood film industry.",
+    "github_url": "https://github.com/Ra59s-Das/Bollywood-Movie-Analysis",
+    "language": "Jupyter Notebook",
+    "stars": 1,
+    "updated_at": "2026-04-13T12:54:52Z",
+    "tags": [
+      "Jupyter Notebook"
+    ],
+    "metrics": [],
+    "featured": true,
+    "category": "Data Science",
+    "approved": true
+  },
+  {
+    "repo_name": "NoVa-AI-chatBot",
+    "description": "NoVa-AI-chatBot \u2014 a project by Raunak Das",
+    "github_url": "https://github.com/Ra59s-Das/NoVa-AI-chatBot",
+    "language": "TypeScript",
+    "stars": 1,
+    "updated_at": "2026-04-13T12:54:49Z",
+    "tags": [
+      "TypeScript"
+    ],
+    "metrics": [],
+    "featured": true,
+    "category": "Full-Stack",
+    "approved": true
+  },
+  {
+    "repo_name": "stackloom",
+    "name": "stackloom",
+    "description": "A curated stack of my work.",
+    "github_url": "https://github.com/Ra59s-Das/stackloom",
+    "language": "Python",
+    "stars": 0,
+    "updated_at": "2026-04-19",
+    "tags": [
+      "Python"
+    ],
+    "metrics": [],
+    "featured": false,
+    "category": "Project",
+    "approved": true
+  },
+  {
+    "repo_name": "Book-Intelligence",
+    "name": "Book Intelligence",
+    "description": "Book-Intelligence \u2014 a project by Raunak Das",
+    "github_url": "https://github.com/Ra59s-Das/Book-Intelligence",
+    "language": "Python",
+    "stars": 0,
+    "updated_at": "2026-04-18",
+    "tags": [
+      "Python"
+    ],
+    "metrics": [],
+    "featured": false,
+    "category": "Data Science",
+    "approved": true
+  }
+]
