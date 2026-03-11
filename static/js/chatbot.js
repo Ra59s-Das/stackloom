@@ -140,9 +140,8 @@ async function sendChat() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        message: text,
-        history: chatHistory,
-        system_prompt: SYSTEM_PROMPT
+        messages: chatHistory,
+        system: SYSTEM_PROMPT
       })
     });
 
@@ -153,7 +152,7 @@ async function sendChat() {
     const data = await res.json();
     hideTyping();
 
-    const reply = data.reply || 'Something went wrong — try again.';
+    const reply = data.choices?.[0]?.message?.content || 'Something went wrong — try again.';
     addMsg(reply, 'bot');
     chatHistory.push({ role: 'assistant', content: reply });
 
