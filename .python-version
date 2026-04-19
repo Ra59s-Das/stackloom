@@ -1,0 +1,2 @@
+New-Item .python-version -ItemType File
+Add-Content .python-version "3.11.0"
