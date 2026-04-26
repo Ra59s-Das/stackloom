@@ -61,7 +61,7 @@ def save(path, data):
 # ── Routes ───────────────────────────────────────────
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="index.html")
 
 @app.get("/api/projects")
 async def get_projects():
