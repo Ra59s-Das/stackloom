@@ -1,7 +1,10 @@
 __pycache__/
 *.pyc
 .env
+<<<<<<< HEAD
 static/images/*.jpg
 static/images/*.jpeg
 static/images/*.png
 static/images/certificates/*.png
+=======
+>>>>>>> 5286c17f79f617bf94be441f8aa223e1f6eb9aa0
