@@ -189,7 +189,7 @@ async def chat(payload: ChatMessage):
                 "Content-Type": "application/json"
             },
             json={
-                "model": "llama3-70b-8192",
+                "model": "llama-3.2-70b-versatile",
                 "temperature": 0.65,
                 "max_tokens": 800,
                 "messages": [
