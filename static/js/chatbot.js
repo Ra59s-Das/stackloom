@@ -146,7 +146,9 @@ async function sendChat() {
     });
 
     if (!res.ok) {
-      throw new Error(`HTTP ${res.status}`);
+      const errData = await res.json().catch(() => null);
+      const errMessage = errData?.detail || errData?.message || `HTTP ${res.status}`;
+      throw new Error(errMessage);
     }
 
     const data = await res.json();

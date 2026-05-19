@@ -14,6 +14,20 @@ from pathlib import Path
 from pydantic import BaseModel
 from typing import Optional, List, Dict, Any
 
+
+def load_dotenv(path='.env'):
+    env_path = Path(path)
+    if not env_path.exists():
+        return
+    for line in env_path.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith('#') or '=' not in line:
+            continue
+        key, value = line.split('=', 1)
+        os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
+load_dotenv()
+
 # ── Setup ──────────────────────────────────────────
 app = FastAPI(title="Raunak Das Portfolio", version="2.0")
 
@@ -163,7 +177,10 @@ async def sync_github():
 async def chat(payload: ChatMessage):
     groq_key = os.environ.get("GROQ_API_KEY", "")
     if not groq_key:
-        raise HTTPException(400, "GROQ_API_KEY not set")
+        return JSONResponse(
+            status_code=503,
+            content={"detail": "Chatbot disabled: GROQ_API_KEY is not set. Add GROQ_API_KEY to your environment or .env file."}
+        )
     async with httpx.AsyncClient(timeout=30) as client:
         resp = await client.post(
             "https://api.groq.com/openai/v1/chat/completions",
