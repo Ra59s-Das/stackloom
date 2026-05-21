@@ -326,8 +326,10 @@ window.openModal = cert => {
     <p style="font-size:14px;font-weight:300;color:var(--c200);line-height:1.85">${cert.description || ''}</p>
     ${verifyBtn}`;
 
-  document.getElementById('modBg').classList.add('on');
+  const modBg = document.getElementById('modBg');
+  modBg.classList.add('on');
   document.body.classList.add('modal-open');
+  window.scrollTo(0, 0);
 };
 window.modClose = () => {
   document.getElementById('modBg').classList.remove('on');
