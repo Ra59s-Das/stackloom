@@ -63,17 +63,27 @@ body {
 
 /* ── CURSOR ── */
 #cur {
-  position: fixed; width: 5px; height: 5px;
+  position: fixed;
+  width: 8px; height: 8px;
   background: var(--ac); border-radius: 50%;
-  pointer-events: none; z-index: 100001;
+  pointer-events: none;
+  z-index: 2147483647 !important;
   transform: translate(-50%, -50%);
+  mix-blend-mode: normal !important;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.6));
+  will-change: transform;
 }
 #cur-r {
-  position: fixed; width: 26px; height: 26px;
-  border: 1px solid rgba(122,175,196,.28); border-radius: 50%;
-  pointer-events: none; z-index: 100000;
+  position: fixed; width: 30px; height: 30px;
+  border: 2px solid rgba(122,175,196,.95); border-radius: 50%;
+  background: transparent;
+  pointer-events: none;
+  z-index: 2147483646 !important;
   transform: translate(-50%, -50%);
-  transition: left .25s ease, top .25s ease, width .2s, height .2s;
+  transition: left .12s ease, top .12s ease, width .12s, height .12s;
+  mix-blend-mode: normal !important;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.6));
+  will-change: transform;
 }
 body:has(a:hover) #cur-r,
 body:has(button:hover) #cur-r { width: 42px; height: 42px; border-color: rgba(122,175,196,.5); }
