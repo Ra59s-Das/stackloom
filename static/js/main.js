@@ -327,8 +327,12 @@ window.openModal = cert => {
     ${verifyBtn}`;
 
   document.getElementById('modBg').classList.add('on');
+  document.body.classList.add('modal-open');
 };
-window.modClose = () => document.getElementById('modBg').classList.remove('on');
+window.modClose = () => {
+  document.getElementById('modBg').classList.remove('on');
+  document.body.classList.remove('modal-open');
+};
 document.getElementById('modBg').addEventListener('click', e => { if(e.target.id==='modBg') window.modClose(); });
 
 /* ── CONTACT FORM ────────────────────────────────── */
