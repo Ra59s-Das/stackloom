@@ -472,10 +472,9 @@ nav.sc {
 .field textarea:focus ~ label, .field textarea:not(:placeholder-shown) ~ label {
   top: 4px; font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ac);
 }
-.field textarea { min-height: 110px; padding-top: 22px; resize: vertical; }
+field textarea { min-height: 110px; padding-top: 22px; resize: vertical; }
 
 /* ── MODAL ── */
-<<<<<<< HEAD
 body.modal-open { overflow: hidden !important; }
 .modal-bg { 
   position: fixed !important; 
@@ -497,11 +496,6 @@ body.modal-open { overflow: hidden !important; }
   padding: 20px;
 }
 .modal-bg.on { opacity: 1 !important; pointer-events: all !important; }
-=======
-body.modal-open { overflow: hidden; }
-.modal-bg { position: fixed; inset: 0; background: rgba(10,15,18,.88); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .3s; backdrop-filter: blur(8px); padding: 20px; }
-.modal-bg.on { opacity: 1; pointer-events: all; }
->>>>>>> db24aad (fixes of the portfolio)
 .modal-box { background: var(--bg2); border: 1px solid var(--line); border-left: 2px solid var(--ac); max-width: 750px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 40px; position: relative; border-radius: 6px; transform: scale(0.95); transition: transform .3s ease-out; scrollbar-width: thin; scrollbar-color: var(--bg3) transparent; }
 @media (max-width: 768px) { .modal-box { max-width: 90vw; padding: 32px 24px; } }
 .modal-bg.on .modal-box { transform: scale(1); }
